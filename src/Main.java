@@ -10,8 +10,23 @@ public class Main {
 
         System.out.println(start);
 
-        String[] options = {"Wanna fuck?", "Hey bby, wanna hang?", "Wanna catch a movie?"};
+        dialogOption(new String[]{
+                "Wanna fuck?",
+                "Hey bby, wanna hang?",
+                "Wanna catch a movie?"
+        }, "She said yes\nShe wants to see you.");
 
+
+        System.out.println("What do u propose her to do?");
+
+        dialogOption(new String[]{
+                "Some casual netflix and chill",
+                "Go catch a movie",
+                "Go to a strip club"
+        }, "She said yes\nShe wants to meet u");
+    }
+
+    private static void dialogOption (String[] options, String successMessage) {
         for (int i=0 ; i<options.length; i++){
             System.out.println("\t - " + (i+1)+": " + options[i]);
         }
@@ -20,22 +35,7 @@ public class Main {
         int answer = input.nextInt() - 1;
 
         if (answer == 0){
-            System.out.println("She said yes!");
-            System.out.println("She asks you if u wanna go on a date");
-        }
-        else {
-            System.out.println("She unmatched u, u pathetic loser");
-            System.exit(0);
-        }
-        System.out.println("What do u propose her to do?");
-        String[] options2 = {"Some casual netflix and chill", "Catch a movie", "Go to a strip club"};
-        for (int i=0 ; i<options2.length; i++){
-            System.out.println("\t - " + (i+1)+": " + options2[i]);
-        }
-        answer = input.nextInt() - 1;
-        if (answer == 0){
-            System.out.println("She said yes!");
-            System.out.println("Nice!");
+            System.out.println(successMessage);
         }
         else {
             System.out.println("She unmatched u, u pathetic loser");
