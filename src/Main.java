@@ -14,7 +14,8 @@ public class Main {
                 "Wanna fuck?",
                 "Hey bby, wanna hang?",
                 "Wanna catch a movie?"
-        }, "She said yes\nShe wants to see you.");
+        }, "She said yes\nShe wants to see you.",
+                "She unmatched u, u pathetic loser");
 
 
         System.out.println("What do u propose her to do?");
@@ -22,8 +23,9 @@ public class Main {
         dialogOption(new String[]{
                 "Some casual netflix and chill",
                 "Go catch a movie",
-                "Go to a strip club"
-        }, "She said yes\nShe wants to meet u");
+                "Go to a strip club"},
+                "She said yes\nShe wants to meet u",
+                "She unmatched u, u pathetic loser");
 
         System.out.println("She comes over to ur lousy apartment\nWhat movie do you pick?");
 
@@ -31,20 +33,22 @@ public class Main {
                 "Der Untergang",
                 "Shrek the third",
                 "Black balls",
-                "Where the hell is Herning?"
-        }, "She likes the idea, she's a woman of culture aswell");
+                "Where the hell is Herning?"},
+                "She likes the idea, she's a woman of culture aswell",
+                "She does NOT like the idea, what were u actually thinking dumbass?");
 
         System.out.println("When Hitler enters the room and yells at his friends, she starts touching ur thigh\nWhat do you do?");
 
         dialogOption(new String[]{
                 "Removes her hand, u respect Jesus Christ and the good Lord",
-                "Moves her hand to ur family jewels"
-        }, "She kiss ur chin, good job buddy");
+                "Moves her hand to ur family jewels"},
+                "She kiss ur chin, good job buddy",
+                "Wow, don't u have any respect for women?");
     }
 
-    private static void dialogOption (String[] options, String successMessage) {
+    private static void dialogOption (String[] options, String successMessage, String failureMessage) {
         for (int i=0 ; i<options.length; i++){
-            System.out.println("\t - " + (i+1)+": " + options[i]);
+            System.out.println("\t - " + (i+1) + ": " + options[i]);
         }
         Scanner input = new Scanner(System.in);
 
@@ -54,7 +58,7 @@ public class Main {
             System.out.println(successMessage);
         }
         else {
-            System.out.println("She unmatched u, u pathetic loser");
+            System.out.println(failureMessage);
             System.exit(0);
         }
     }
