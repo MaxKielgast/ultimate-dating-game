@@ -11,50 +11,56 @@ public class Main {
         System.out.println(start);
 
         dialogOption(new String[]{
-                "Wanna fuck?",
                 "Hey bby, wanna hang?",
                 "Wanna catch a movie?"
         }, "She said yes\nShe wants to see you.",
-                "She unmatched u, u pathetic loser");
+                "She unmatched u, u pathetic loser",
+                "Wanna fuck?");
 
 
         System.out.println("What do u propose her to do?");
 
         dialogOption(new String[]{
-                "Some casual netflix and chill",
                 "Go catch a movie",
                 "Go to a strip club"},
                 "She said yes\nShe wants to meet u",
-                "She unmatched u, u pathetic loser");
+                "She unmatched u, u pathetic loser",
+                "Some casual netflix and chill");
 
         System.out.println("She comes over to ur lousy apartment\nWhat movie do you pick?");
 
         dialogOption(new String[]{
-                "Der Untergang",
                 "Shrek the third",
                 "Black balls",
                 "Where the hell is Herning?"},
                 "She likes the idea, she's a woman of culture aswell",
-                "She does NOT like the idea, what were u actually thinking dumbass?");
+                "She does NOT like the idea, what were u actually thinking dumbass?",
+                "Der Untergang");
 
         System.out.println("When Hitler enters the room and yells at his friends, she starts touching ur thigh\nWhat do you do?");
 
         dialogOption(new String[]{
-                "Removes her hand, u respect Jesus Christ and the good Lord",
                 "Moves her hand to ur family jewels"},
                 "She kiss ur chin, good job buddy",
-                "Wow, don't u have any respect for women?");
+                "Wow, don't u have any respect for women?",
+                "Removes her hand, u respect Jesus Christ and the good Lord");
     }
 
-    private static void dialogOption (String[] options, String successMessage, String failureMessage) {
-        for (int i=0 ; i<options.length; i++){
-            System.out.println("\t - " + (i+1) + ": " + options[i]);
+    private static void dialogOption (String[] failureOptions, String successMessage, String failureMessage, String successOption) {
+        ArrayList<String> options = new ArrayList<>(Arrays.asList(failureOptions));
+        options.add(successOption);
+
+        Collections.shuffle(options);
+
+        for (int i=0 ; i<options.size(); i++){
+            System.out.println("\t - " + (i+1) + ": " + options.get(i));
         }
         Scanner input = new Scanner(System.in);
 
-        int answer = input.nextInt() - 1;
-
-        if (answer == 0){
+        int answerIndex = input.nextInt() - 1;
+        String answer = options.get(answerIndex);
+        if (answer.equals(successOption)){
+            System.out.println("You chose: " + answer);
             System.out.println(successMessage);
         }
         else {
