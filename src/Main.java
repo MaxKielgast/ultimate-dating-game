@@ -24,6 +24,22 @@ public class Main {
                 "Go catch a movie",
                 "Go to a strip club"
         }, "She said yes\nShe wants to meet u");
+
+        System.out.println("She comes over to ur lousy apartment\nWhat movie do you pick?");
+
+        dialogOption(new String[]{
+                "Der Untergang",
+                "Shrek the third",
+                "Black balls",
+                "Where the hell is Herning?"
+        }, "She likes the idea, she's a woman of culture aswell");
+
+        System.out.println("When Hitler enters the room and yells at his friends, she starts touching ur thigh\nWhat do you do?");
+
+        dialogOption(new String[]{
+                "Removes her hand, u respect Jesus Christ and the good Lord",
+                "Moves her hand to ur family jewels"
+        }, "She kiss ur chin, good job buddy");
     }
 
     private static void dialogOption (String[] options, String successMessage) {
