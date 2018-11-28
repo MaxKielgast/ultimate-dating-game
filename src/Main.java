@@ -57,14 +57,22 @@ public class Main {
         }
         Scanner input = new Scanner(System.in);
 
-        int answerIndex = input.nextInt() - 1;
-        String answer = options.get(answerIndex);
-        if (answer.equals(successOption)){
-            System.out.println("You chose: " + answer);
-            System.out.println(successMessage);
-        }
-        else {
-            System.out.println(failureMessage);
+        try {
+            int answerIndex = input.nextInt() - 1;
+            String answer = options.get(answerIndex);
+            if (answer.equals(successOption)){
+                System.out.println("You chose: " + answer);
+                System.out.println(successMessage);
+            }
+            else {
+                System.out.println(failureMessage);
+                System.exit(0);
+            }
+        } catch (InputMismatchException exception) {
+            System.out.println("You failed at answering a simple question - what woman would ever want a \"man\" like you?");
+            System.exit(0);
+        } catch (IndexOutOfBoundsException exception) {
+            System.out.println("Is it really that hard to choose a number from a list...? You have failed in life");
             System.exit(0);
         }
     }
